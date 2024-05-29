@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KakaoTalk Share Button</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      Kakao.init('029ca13af98266b719997bc0dfcb3ff1'); // 여기서 'YOUR_APP_KEY'는 여러분의 JavaScript 키로 대체하세요.
+      console.log(Kakao.isInitialized()); // SDK 초기화 여부를 확인합니다.
+    </script>
+</head>
+<body>
+  <button id="kakao-link-btn">
+    카카오톡으로 공유하기
+  </button>
+
+  <script>
+    document.getElementById('kakao-link-btn').addEventListener('click', function() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: 'AI 골프 예약 시스템',
+          description: '골프 예약을 혁신적으로 간편하게 만들어 줄 AI 기반 예약 시스템을 경험해 보세요!',
+          imageUrl: 'IMAGE_URL', // 공유할 이미지 URL
+          link: {
+            mobileWebUrl: 'https://01ngo66ppp6.typeform.com/to/XqI5PeFY',
+            webUrl: 'https://01ngo66ppp6.typeform.com/to/XqI5PeFY'
+          }
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'https://01ngo66ppp6.typeform.com/to/XqI5PeFY',
+              webUrl: 'https://01ngo66ppp6.typeform.com/to/XqI5PeFY'
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
