@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KakaoTalk Share Button</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      Kakao.init('029ca13af98266b719997bc0dfcb3ff1'); // Your JavaScript key
+      console.log(Kakao.isInitialized()); // Check if the SDK is initialized
+
+      function shareKakao() {
+        Kakao.Link.sendCustom({
+          templateId: 108426, // Your Kakao template ID
+        });
+      }
+    </script>
+</head>
+<body onload="shareKakao()">
+    카카오톡 공유를 위해 잠시만 기다려 주세요...
+</body>
+</html>
